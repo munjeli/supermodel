@@ -11,7 +11,7 @@ GOARCH=$(shell go env GOARCH)
 # Get the git commit
 GIT_DIRTY=$(shell test -n "`git status --porcelain`" && echo "+CHANGES" || true)
 GIT_COMMIT=$(shell git rev-parse --short HEAD)
-GIT_IMPORT=github.com/munjeli/treecli/version
+GIT_IMPORT=github.com/munjeli/supermodel/version
 GOLDFLAGS=-X $(GIT_IMPORT).GitCommit=$(GIT_COMMIT)$(GIT_DIRTY)
 
 export GOLDFLAGS
@@ -51,8 +51,8 @@ dev: deps ## Build and install a development build
 	fi
 	@mkdir -p pkg/$(GOOS)_$(GOARCH)
 	@go install -ldflags '$(GOLDFLAGS)'
-	@cp $(GOPATH)/bin/treecli bin
-	@cp $(GOPATH)/bin/treecli pkg/$(GOOS)_$(GOARCH)
+	@cp $(GOPATH)/bin/supermodel bin
+	@cp $(GOPATH)/bin/supermodel pkg/$(GOOS)_$(GOARCH)
 
 fmt: ## Format Go code
 	@gofmt -w -s $(GOFMT_FILES)
@@ -73,7 +73,7 @@ test: deps fmt-check ## Run unit tests
 	fi
 
 updatedeps:
-	@echo "INFO: treecli deps are managed by govendor. See README.md"
+	@echo "INFO: supermodel deps are managed by govendor. See README.md"
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
