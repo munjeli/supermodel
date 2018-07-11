@@ -1,8 +1,6 @@
 # Supermodel
 
-Supermodel is a development tool for distributed systems programming. One definition of a distributed project is that it has multiple repositories. This is a frequent cause of confusion and breakage during maintenance and release. A supermodel is a project file that sets a metafilesytem architecture for the project with yaml. The definition of a project might include a service, its database configuration, the server build template, the provisioning code with Chef, Ansible or another provisioner, the logging and monitoring setup. The supermodel allows developers to share a definition of a workspace to build absolute paths for automation and vendored artifacts, a common requirement of immutable build systems. The project definition can make it easy to get new developers off the ground and set up. It also might help failures due to missing runtime dependencies or complicated updates for shared resources.
-
-If you think about it, when you're working in an environment with end to end automation and immutable servers the whole infrastructure could be regarded as a single file system including the configuration of networking on a cloud and all the application code. Then every 'project' is really just a subset of the infrastructure. Setting up a repository of supermodels for your organization can help get everyone on the same page in discussions about systems. 
+Supermodel is a development tool for distributed systems programming. 
 
 ## Getting Started
 
@@ -24,6 +22,11 @@ Supermodel stores its dependencies under `vendor/`, which [Go 1.6+ will automati
 ### Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/munjeli/supermodel/tags). 
+
+## Why
+One definition of a distributed project is that it has multiple repositories. This is a frequent cause of confusion and breakage during maintenance and release. A supermodel is a project file that sets a metafilesytem architecture for the project with yaml. The definition of a project might include a service, its database configuration, the server build template, the provisioning code with Chef, Ansible or another provisioner, the logging and monitoring setup. The supermodel allows developers to share a definition of a workspace to build absolute paths for automation and vendored artifacts, a common requirement of immutable build systems. The project definition can make it easy to get new developers off the ground and set up. It also might help failures due to missing runtime dependencies or complicated updates for shared resources.
+
+If you think about it, when you're working in an environment with end to end automation and immutable servers the whole infrastructure could be regarded as a single file system including the configuration of networking on a cloud and all the application code. Then every 'project' is really just a subset of the infrastructure. Setting up a repository of supermodels for your organization can help get everyone on the same page in discussions about systems. 
 
 ## Models
 
