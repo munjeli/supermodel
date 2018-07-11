@@ -14,8 +14,9 @@ func (c *PullCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis of how to pull a model
 func (c *PullCommand) Synopsis() string {
-	return ""
+	return "Pulls latest of just the checked out branches"
 }
 
 func (c *PullCommand) Help() string {

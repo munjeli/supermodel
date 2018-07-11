@@ -14,8 +14,9 @@ func (c *UpdateCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis of how to update a model
 func (c *UpdateCommand) Synopsis() string {
-	return ""
+	return "Reread the model configuration and rebuild the working model"
 }
 
 func (c *UpdateCommand) Help() string {

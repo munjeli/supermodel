@@ -14,8 +14,9 @@ func (c *ShowCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis what it means to show a model on the command line
 func (c *ShowCommand) Synopsis() string {
-	return ""
+	return "Show the model on the command line with current branch hinting"
 }
 
 func (c *ShowCommand) Help() string {

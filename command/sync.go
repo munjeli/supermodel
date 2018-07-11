@@ -14,8 +14,9 @@ func (c *SyncCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis of what it means to sync for a model
 func (c *SyncCommand) Synopsis() string {
-	return ""
+	return "Pull latest on all branches in all repositories"
 }
 
 func (c *SyncCommand) Help() string {

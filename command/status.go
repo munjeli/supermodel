@@ -14,8 +14,9 @@ func (c *StatusCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis of the model status command
 func (c *StatusCommand) Synopsis() string {
-	return ""
+	return "Return status of all checked out branches"
 }
 
 func (c *StatusCommand) Help() string {

@@ -14,8 +14,9 @@ func (c *PushCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis what it means to push all the repos
 func (c *PushCommand) Synopsis() string {
-	return ""
+	return "Push commits from all repositories to their respective remotes"
 }
 
 func (c *PushCommand) Help() string {

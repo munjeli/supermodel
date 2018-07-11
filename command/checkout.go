@@ -14,8 +14,9 @@ func (c *CheckoutCommand) Run(args []string) int {
 	return 0
 }
 
+// Synopsis of the checkout command as with index
 func (c *CheckoutCommand) Synopsis() string {
-	return ""
+	return "Checkout branches on the model by index"
 }
 
 func (c *CheckoutCommand) Help() string {
