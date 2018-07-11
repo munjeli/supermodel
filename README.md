@@ -23,6 +23,9 @@ Supermodel stores its dependencies under `vendor/`, which [Go 1.6+ will automati
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/munjeli/supermodel/tags). 
 
+## Usage
+
+
 ## Why
 One definition of a distributed project is that it has multiple repositories. This is a frequent cause of confusion and breakage during maintenance and release. A supermodel is a project file that sets a metafilesytem architecture for the project with yaml. The definition of a project might include a service, its database configuration, the server build template, the provisioning code with Chef, Ansible or another provisioner, the logging and monitoring setup. The supermodel allows developers to share a definition of a workspace to build absolute paths for automation and vendored artifacts, a common requirement of immutable build systems. The project definition can make it easy to get new developers off the ground and set up. It also might help failures due to missing runtime dependencies or complicated updates for shared resources.
 
@@ -33,8 +36,6 @@ If you think about it, when you're working in an environment with end to end aut
 A model for Supermodel is a yaml file that describes a file system made of namespaces and repositories. This model will be created from the file by creating folders for the namespaces and git cloning the repositories. The model has a root which then can be a defined workspace for absolute paths in automation or vendoring artifacts. There are only two keys for a model hash: namespaces and repos.
 
 Models are a logical definition and not enforced in any way. You could make models for various views of the source. For example, if a project manager wanted to see the git metrics or git logs of all the projects they oversee, that could be scripted against a custom model. Likewise models give us a reference for runtime dependencies that could be leveraged for troubleshooting and debugging. 
-
-## Usage
 
 ## Authors
 
