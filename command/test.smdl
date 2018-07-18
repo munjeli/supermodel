@@ -1,0 +1,33 @@
+{
+  "root": {
+    "dev": {
+      "repos": [
+        {
+          "url": null,
+          "branches": [
+            "master",
+            "dev"
+          ]
+        }
+      ]
+    },
+    "ops": {
+      "repos": [
+        {
+          "url": null,
+          "branches": [
+            "master",
+            "dev"
+          ]
+        },
+        {
+          "url": null,
+          "branches": [
+            "master",
+            "dev"
+          ]
+        }
+      ]
+    }
+  }
+}

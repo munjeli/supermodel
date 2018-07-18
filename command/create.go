@@ -2,9 +2,10 @@ package command
 
 import (
 	"fmt"
-	"os"
-	"path/filepath"
+	"io/ioutil"
 	"strings"
+
+	"encoding/json"
 )
 
 // CreateCommand data
@@ -14,14 +15,15 @@ type CreateCommand struct {
 
 // Run Read the .smdl file, build the filesystem, and clone the repositories.
 func (c *CreateCommand) Run(args []string) int {
-	// Write your code here
-	dirname := "." + string(filepath.Separator)
-	d, err := os.Open(dirname)
-	fmt.Println(d.Readdirnames(-1))
+	var m interface{}
+	modelFile := "test.smdl"
+	modelData, err := ioutil.ReadFile(modelFile)
 	if err != nil {
 		fmt.Println(err)
-		os.Exit(1)
 	}
+	model := json.Unmarshal(modelData, &m)
+	fmt.Println(model)
+	fmt.Println("Hello")
 
 	return 0
 }
