@@ -15,15 +15,20 @@ type CreateCommand struct {
 
 // Run Read the .smdl file, build the filesystem, and clone the repositories.
 func (c *CreateCommand) Run(args []string) int {
-	var m interface{}
-	modelFile := "test.smdl"
+	var m map[string]interface{}
+	modelFile := ".\\test.smdl"
 	modelData, err := ioutil.ReadFile(modelFile)
 	if err != nil {
 		fmt.Println(err)
 	}
-	model := json.Unmarshal(modelData, &m)
-	fmt.Println(model)
-	fmt.Println("Hello")
+
+	//fmt.Printf("Model Contents: %v", string(modelData))
+
+	json.Unmarshal(modelData, &m)
+	var b m.root
+	for key := range m {
+		fmt.Printf("%v:\n ****************************************", key)
+	}
 
 	return 0
 }
