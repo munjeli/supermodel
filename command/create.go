@@ -1,11 +1,24 @@
 package command
 
+// algorithm for building the model
+// list the keys in the map
+// start with repos and fall thru actually this is wrong
+// if key == repos:
+// 	os.getcwd() is path to clone url
+//  (make repo struct though for reads later on branches)
+// else:
+//   if namespace in key.path:
+//		namespace = namespace + key
+// 	mkdirs(keys)
+//
+
+//
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 
-	"encoding/json"
+	"github.com/munjeli/modeler"
 )
 
 // CreateCommand data
@@ -15,20 +28,12 @@ type CreateCommand struct {
 
 // Run Read the .smdl file, build the filesystem, and clone the repositories.
 func (c *CreateCommand) Run(args []string) int {
-	var m map[string]interface{}
-	modelFile := ".\\test.smdl"
-	modelData, err := ioutil.ReadFile(modelFile)
+	workingDirectory, err := os.Getwd()
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("boo")
 	}
-
-	//fmt.Printf("Model Contents: %v", string(modelData))
-
-	json.Unmarshal(modelData, &m)
-	var b m.root
-	for key := range m {
-		fmt.Printf("%v:\n ****************************************", key)
-	}
+	modelFile := workingDirectory + "\\test.smdl"
+	modeler.LoadModel(modelFile)
 
 	return 0
 }
